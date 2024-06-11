@@ -1,0 +1,115 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Color x:Key="Color-Primary1">#ddd</Color>
+    <Color x:Key="Color-Primary2">#41454e</Color>
+    <Color x:Key="Color-Primary3">#3b5766</Color>
+
+
+    <SolidColorBrush x:Key="BrushPrimary1" Color="{StaticResource Color-Primary1}" />
+    <SolidColorBrush x:Key="BrushPrimary2" Color="{StaticResource Color-Primary2}" />
+    <SolidColorBrush x:Key="BrushPrimary3" Color="{StaticResource Color-Primary3}" />
+
+    <!--  Default button  -->
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource BrushPrimary1}" />
+        <Setter Property="Foreground" Value="{StaticResource BrushPrimary2}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Padding" Value="10,5" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <!--<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />-->
+        <!--  Button is just a border with a background and a content presenter  -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Margin="{TemplateBinding Margin}"
+                        Padding="{TemplateBinding Padding}"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="3">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource BrushPrimary2}" />
+                <Setter Property="Foreground" Value="{StaticResource BrushPrimary1}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource BrushPrimary3}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--  Inverted (accent) Button  -->
+    <Style
+        x:Key="InvertedButton"
+        BasedOn="{StaticResource {x:Type Button}}"
+        TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource BrushPrimary3}" />
+        <Setter Property="Foreground" Value="{StaticResource BrushPrimary1}" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource BrushPrimary2}" />
+                <Setter Property="Foreground" Value="{StaticResource BrushPrimary1}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#51555e" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--  Red Accent Button  -->
+    <Style
+        x:Key="ExitButton"
+        BasedOn="{StaticResource {x:Type Button}}"
+        TargetType="Button">
+        <Setter Property="Background" Value="#FA5454" />
+        <Setter Property="Foreground" Value="{StaticResource BrushPrimary1}" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#ff7777" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#51555e" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--  Button Accent 3  -->
+    <Style
+        x:Key="ClearButton"
+        BasedOn="{StaticResource {x:Type Button}}"
+        TargetType="Button">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{StaticResource BrushPrimary1}" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#8872ECFF" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#51555e" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>
